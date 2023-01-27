@@ -37,4 +37,19 @@ class ApplicationController < ActionController::Base
     }
     cookies[:cart]
   end
+ 
+  
+  #returns the customer's email by order id
+  def email_by_order_id(id)
+    Order.where(id: id).pluck(:email).join
+  end
+  helper_method :email_by_order_id
+  
+
+  #returns an array of objects of products in order by order id
+  def enhanced_order(id)
+    order = LineItem.where(order_id: id).pluck(:product_id)
+    Product.where(id: order).map {|product| { product:product, quantity: cart[product.id.to_s] } }
+  end
+  helper_method :enhanced_order
 end
