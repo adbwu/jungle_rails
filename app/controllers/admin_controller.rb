@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
-  before_action :index, :authenticate
+  before_action :authenticate
 
   def authenticate
-    http_basic_authenticate_or_request_with name: ENV['ADMIN_USERNAME'], password: ENV['ADMIN_PASSWORD']
+    http_basic_authenticate_or_request_with name: "Jungle", password: 'Password'
   end
 end
