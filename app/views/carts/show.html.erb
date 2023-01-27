@@ -5,7 +5,12 @@
   </header>
 
   <% if enhanced_cart.count == 0 %>
-  <h2>Empty</h2>
+  <div class="alert alert-info" role="alert">
+  <h4 class="alert-heading">Who's Been Snacking on Your Cart? &#128034</h4>
+  <p>There's no greenery in your cart! Head on over to the &#127807 <a href="/" class="alert-link">front page</a> &#127807 for all the vegetation a turt could need.</p>
+  <hr>
+  <p class="mb-0 text-center">&#127794 &#127795 &#127794 &#127795 &#127794 &#127795 &#127794 &#127795 &#127794 &#127795 &#127794 &#127795 &#127794 &#127795 &#127794 &#127795 &#127794 &#127795 &#127794 &#127795 &#127794 &#127795 &#127794 &#127795 &#127794 &#127795 &#127794</p>
+  </div>
   <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
